@@ -1,7 +1,41 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Dom's site</title>
+  </head>
+  
+  
+  
+  <body>
+    <h1 class="display-1" align="center">Poem generator (from input)</h1>
+
+    
+    <h1 class="display-3">How it works:</h1>
+    <h1 class="display-6"></h1>
+    <h1 class="display-6">What does it do:</h1>
+    <p class="lead" word-wrap="break-word">It converts each word in the input to a number and performs mathematical operations on those numbers, and therefore predicts the next word in the sequence. This process is repeated several times and it finishes the poem</p>
+    <h1 class="display-6">Encoding layer:</h1>
+    <p class="lead" word-wrap="break-word">It starts by turning each word into a number. I chose word by word instead of letter by letter because when I only used letters it had an infinite loop of "e"'s and "s"'s. I could have also done it by sub-words and that may have been effective</p>
+    <h1 class="display-6">Embedding layer:</h1>
+    <p class="lead" word-wrap="break-word">The input is a set of 74 numbers. When less is inputed, it adds necesary zeros to the start. The neural network then starts. The first layer is called an embedding layer. The 74 dimention input is here expanded to 100 dimentions. More information is made here</p>
+    <h1 class="display-6">Convelutional layer:</h1>
+    <p class="lead" word-wrap="break-word">Here, I have 64 filters of size 8 "sliding" over the 100 dimention string of information, creating 64 strings of 100 data points. This can extract any information it can, maybe sentiment, maybe sound, maybe what words are in certain groups etc</p>
+    <h1 class="display-6">Bidirectional LSTM stack:</h1>
+    <p class="lead" word-wrap="break-word">This takes inputed sequences and sees what the relation to the information immediately before and after it, this iss carried along and I have made it bidirectional, meaning it worksforwards and backwards</p>
+    <h1 class="display-6">Dropout layer:</h1>
+    <p class="lead" word-wrap="break-word">In this, each signal crossing from the LSTM stack to the dense layer has a 25% chance of being eliminated randomly. This layer only exists during training and is useful because it eliminates one signal becoming dominant</p>
+    <h1 class="display-6">Dense layer:</h1>
+    <p class="lead" word-wrap="break-word">This is a set of cells multiplying every signal that enters them. This results are then modified so negative values are zeroed out. This uses an algorithm called "relu" or rectified linear unit</p>
+    <h1 class="display-6">Dense layer:</h1>
+    <p class="lead" word-wrap="break-word">This is the final layer, and is similar to the previous one. However this one does not have relu but had softmaz instead, this converts the signals into probabilities. The highest probability is then chosen and the process is repeated many times</p>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
 </html>
