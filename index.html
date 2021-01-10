@@ -15,6 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
     
     
+    function readTextFile(file) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    return JSON.parse(rawFile.responseText);
+    }
+
+    var tokeniser = readTextFile("https://github.com/Dom-DJ/Dom-DJ.github.io/edit/main/index.html");
+
+    
     
     <h1 class="display-1" align="center">Poem generator (from input)</h1>
     <h1 class="display-3">The model:<br></h1>
